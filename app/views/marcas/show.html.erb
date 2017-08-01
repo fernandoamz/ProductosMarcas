@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+      <p>
+        <strong>Marca:</strong>
+        &nbsp;<%= @marca.brand %>
+      </p>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+</div>
+
+
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+
+    <ul class="inline">
+      <li class="list-inline-item"><%= button_to "Editar", edit_marca_path(@marca), :class =>"btn btn-primary", :method => :get %></li>
+      <li class="list-inline-item"><%= button_to "Atras", marcas_path , :class =>"btn btn-primary", :method => :get %></li>
+    </ul>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+</div>

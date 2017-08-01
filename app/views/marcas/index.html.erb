@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Marcas</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Marca</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @marcas.each do |marca| %>
+      <tr>
+        <td><%= marca.brand %></td>
+        <td><%= link_to 'Ver', marca %></td>
+        <td><%= link_to 'Editar', edit_marca_path(marca) %></td>
+        <td><%= link_to 'Eliminar', marca, method: :delete, data: { confirm: '¿Estas seguro que deseas eliminar esta marca?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</br>
+</br>
+
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+      <%= button_to "Agregar Marca", new_marca_path, :class =>"btn btn-primary", :method => :get %>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+</div>

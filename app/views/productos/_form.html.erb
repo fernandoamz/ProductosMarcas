@@ -1,0 +1,38 @@
+<%= form_with(model: producto, local: true) do |form| %>
+  <% if producto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(producto.errors.count, "error") %> prohibited this producto from being saved:</h2>
+
+      <ul>
+      <% producto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :producto_name, :required => true %>
+  </div>
+
+  <div class="field">
+  <%= form.label :Marca %>
+  <%= form.select :brand, options_from_collection_for_select(Marca.all, :brand, :brand) %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :producto_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :producto_price, :onkeyup => "validateInptPrice();" %>
+  </div>
+
+  <div class="actions">
+    <button onclick="validateInptName();"><%= form.submit %></button>
+  </div>
+
+<% end %>

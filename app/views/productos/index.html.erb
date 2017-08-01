@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Productos</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Marca</th>
+      <th>Descripcion</th>
+      <th>Precio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @productos.each do |producto| %>
+      <tr>
+        <td><%= producto.name %></td>
+        <td><%= producto.brand %></td>
+        <td><%= producto.description %></td>
+        <td><%= producto.price %></td>
+        <td><%= link_to 'Ver', producto %></td>
+        <td><%= link_to 'Editar', edit_producto_path(producto) %></td>
+        <td><%= link_to 'Eliminar', producto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td colspan="2"></td>
+      <td><strong>Total de los Precios:</strong></td>
+       <td>
+          <%= @totalPrecios %>
+       </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+<div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+      <%= button_to 'Nuevo Producto', new_producto_path, :class =>"btn btn-primary", :method => :get %>
+    </div>
+    <div class="col">
+    </div>
+</div>
+</div>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ProductosMarcas</title>
+    <%= csrf_meta_tags %>
+
+    <!-- stylesheet rails -->
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <!-- JS General -->
+    <%= javascript_include_tag 'app', 'data-turbolinks-track': 'reload' %>
+    
+    
+  </head>
+
+  <body>
+      <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#"><%= link_to 'MarcasProductos', welcome_index_path %></a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link"><%= link_to 'Inicio', welcome_index_path %></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"><%= link_to 'Marcas', marcas_path %></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"><%= link_to 'Productos', productos_path %></a>
+          </li>
+      </div>
+    </nav>
+    <%= yield %>
+  </body>
+</html>
