@@ -12,27 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :producto_name, :required => true %>
+    <%= form.label :Nombre %>
+    <%= form.text_field :name, id: :producto_name, :required => true, :class => 'form-control' %>
   </div>
 
-  <div class="field">
   <%= form.label :Marca %>
-  <%= form.select :brand, options_from_collection_for_select(Marca.all, :brand, :brand) %>
+
+  <%= form.select :brand, options_from_collection_for_select(Marca.all, :brand, :brand), {include_blank: "-----------"}, {required: 'false', autofocus: 'true', class: 'form-control'}%>
+
+  <div class="field">
+    <%= form.label :Descripcion %>
+    <%= form.text_field :description, id: :producto_description, :class => 'form-control'  %>
   </div>
+
+  <div class="field">
+    <%= form.label :Precio %>
+    <%= form.number_field :price, id: :producto_price, :onkeyup => "validateInptPrice();", :class => 'form-control'  %>
+  </div>
+
+  </br>
+  </br>
+
+   <%= form.submit :class => "btn btn-primary", :onclick => "validateInptName();" %>
   
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description, id: :producto_description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price, id: :producto_price, :onkeyup => "validateInptPrice();" %>
-  </div>
-
-  <div class="actions">
-    <button onclick="validateInptName();"><%= form.submit %></button>
-  </div>
 
 <% end %>

@@ -1,5 +1,11 @@
-Marcas
 
+# ProductosMarcas
+
+** rake db:seed
+
+** Solo hice unos pequeños test para los modelos **
+
+Marcas
 - El usuario puede crear una marca. Las marcas solo tienen nombre. Mostrar un error si el usuario no ha puesto ningún nombre.
 - El usuario puede ver una lista con las marcas existentes.
 - El usuario puede editar una marca.
@@ -13,5 +19,3 @@ Productos
 - El usuario puede editar un producto.
 - El usuario puede borrar un producto.
 
-* ...
-# ProductosMarcas

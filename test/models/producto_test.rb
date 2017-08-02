@@ -15,5 +15,9 @@ class ProductoTest < ActiveSupport::TestCase
     assert p.save
   end
   
+  test "shouldn't back the first" do
+    p = Producto.first
+    assert p
+  end
 
-end
+end 

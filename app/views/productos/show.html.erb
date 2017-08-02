@@ -1,27 +1,34 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-xs-6 col-md-4"></div>
+  <div class="col-xs-6 col-md-4">
+    </br>
+    </br>
+    </br>
+    <p id="notice"><%= notice %></p>
+    <p>
+      <strong>Name:</strong>
+      <%= @producto.name %>
+    </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @producto.name %>
-</p>
+    <p>
+      <strong>Brand:</strong>
+      <%= @producto.brand %>
+    </p>
 
-<p>
-  <strong>Brand:</strong>
-  <%= @producto.brand %>
-</p>
+    <p>
+      <strong>Description:</strong>
+      <%= @producto.description %>
+    </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @producto.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @producto.price %>
-</p>
+    <p>
+      <strong>Price:</strong>
+      <%= @producto.price %>
+    </p>
 
 
-<%= link_to 'Edit', edit_producto_path(@producto) %> |
-<%= link_to 'Back', productos_path %>
+    <%= link_to 'Editar', edit_producto_path(@producto) %> |
+    <%= link_to 'Atras', productos_path %>
 
-
+  </div>
+  <div class="col-xs-6 col-md-4"></div>
+</div>

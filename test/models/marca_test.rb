@@ -14,5 +14,10 @@ class MarcaTest < ActiveSupport::TestCase
     m = Marca.new(:brand => "prefix")
     assert m.save
   end
+  
+  test "shouldn't back the first" do
+    m = Marca.first
+    assert m
+  end
 
 end
